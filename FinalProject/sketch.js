@@ -19,13 +19,12 @@ let rocket = {
     stroke('black'); 
     fill("lightgrey");
     rect (x,y,40,60);
-    fill("darkgrey");
+    fill("red");
     triangle(x+20,y-30,x+40,y,x,y);
-    fill("darkgrey");
     rect(x+10,y+60,20,10);
     triangle(x,y+30,x,y+60,x-10,y+60);
     triangle(x+40,y+30,x+40,y+60,x+50,y+60);
-    fill("white");
+    fill("lightblue");
     circle(x+20,y+20,10);
     circle(x+20,y+40,10);
   }
@@ -37,6 +36,19 @@ let moon = {
   circle(400,60,90);
   noStroke();
   fill ('lightgrey');
+  circle(380,55,15);
+  circle(390,40,20);
+  circle(420,60,15);
+  circle(430,80,15);
+  }
+};
+let moon2 = {
+  display:function(){
+  stroke('black');
+  fill ('yellow');
+  circle(400,60,90);
+  noStroke();
+  fill ('#ad9630');
   circle(380,55,15);
   circle(390,40,20);
   circle(420,60,15);
@@ -58,13 +70,15 @@ function draw() {
   moon.display();
   rocket.display();
   fill('black');
-  rect(180,40,140,15);
+  rect(180,38,140,15);
   fill('white');
   text ('Land Spaceship On Moon',180,50);
-  if (x>380, x<440, y>40, y<80){
-    fill ('black');
-    rect(180,40,140,15);
+  if (x>340 & x<440 & y>20 & y<80){
+    fill ('Green');
+    rect(180,38,140,15);
     fill('white');
     text ('SUCCESS!',225,50);
+    moon2.display();
+    rocket.display();
   }
 }
